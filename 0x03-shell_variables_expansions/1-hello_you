@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "hello $user"
+each "hello $USER"
