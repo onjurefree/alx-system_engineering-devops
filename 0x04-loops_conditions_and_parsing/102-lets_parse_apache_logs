@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script uses awk to atract data from apache-access.log file
+
+awk '{print $1, $9}' apache-access.log

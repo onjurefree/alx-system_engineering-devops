@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# This script displays the content of the current directory
+# in list after some matching have be done on the file name
+
+for file in *; do
+	if [[ -f $file && ! $file =~ ^\. ]]; then
+		filename=${file#*-}
+		echo "$filename"
+	fi
+done
