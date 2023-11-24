@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+# This script runs with sudo
+
+file_pid="/var/run/myscript.pid"
+
+# function for SIGTERM and SIGQUIT signals
+function term_handle()
+{
+	rm -f "$file_pid"
+	exit 0
+}
+
+# function to hundle SIGINT signal
+function int_handle()
+{
+	echo "Y U no love me?!"
+}
+
+# function to hundle SIGTERM
+function sigterm_handle()
+{
+	echo "I hate the kill command"
+	rm -f "$file_pid"
+	exit 0
+}
+
+# setting signal handles
+trap term_handle SIGQUIT
+trap int_handle SIGINT
+trap sigterm_handle SIGTERM
+
+# creating PID file now
+echo $$ > "$file_pid"
+
+while true; do
+	echo "To infinity and beyond"
+	sleep 2
+done
