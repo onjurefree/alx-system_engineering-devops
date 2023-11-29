@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script display listerning ports
+
+netstat -lp
