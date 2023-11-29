@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This scripts create connection to listern to lacal host
+
+nc -l -p 98
