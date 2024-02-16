@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# this script check for current user
+sudo -u "$1" 'whoami'
